@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de inicio de sesión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://p4.wallpaperbetter.com/wallpaper/825/1001/261/orange-sky-orange-sunset-field-countryside-wallpaper-preview.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .container {
+      max-width: 400px;
+      max-height: 800px;
+      margin-top: 90px;
+      padding: 25px;
+      margin-left: 450px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(0px);
+      border-radius: 5px;
+    }
+    .container h2 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 25px;
+      margin-right: 20px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn {
+      margin: 1px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Formulario de inicio de sesión</h2>
+  <form th:action="@{/inisecc}" method="post">
+    <div class="form-group">
+      <label for="nombre">Nombre de usuario</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="contraseña">Contraseña</label>
+      <input type="password" class="form-control" id="contraseña" name="contraseña" required>
+    </div>
+  </form>
+  <a th:href="@{/registro2}" class="btn btn-primary">Iniciar sesión</a>
+</div>
+</body>
+</html>

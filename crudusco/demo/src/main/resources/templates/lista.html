@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-image: url('https://p4.wallpaperbetter.com/wallpaper/825/1001/261/orange-sky-orange-sunset-field-countryside-wallpaper-preview.jpg');
+            background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Fija la imagen de fondo mientras se desplaza por la página */
+            background-position: center; /* Centra la imagen de fondo */
+        }
+        .container{
+            background: rgba(255, 255, 255, 0.6); /* Fondo blanco con opacidad del 70% */
+            backdrop-filter: blur(0px); /* Efecto de desenfoque para mejorar la transparencia */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <table class="table" border="3">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>TELEFONO</th>
+                <th>EDAD</th>
+                <th>CONTRASEÑA</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="usuarios:${usuarios}">
+                <td th:text="${usuarios.id}"></td>
+                <td th:text="${usuarios.nombre}"></td>
+                <td th:text="${usuarios.apellido}"></td>
+                <td th:text="${usuarios.telefono}"></td>
+                <td th:text="${usuarios.edad}"></td>
+                <td th:text="${usuarios.contrasena}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registroDatos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <style>
+    body {
+      background-image: url('https://p4.wallpaperbetter.com/wallpaper/825/1001/261/orange-sky-orange-sunset-field-countryside-wallpaper-preview.jpg');
+      background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      background-attachment: fixed; /* Fija la imagen de fondo mientras se desplaza por la página */
+      background-position: center; /* Centra la imagen de fondo */
+    }
+    .container{
+      background: rgba(255, 255, 255, 0.6); /* Fondo blanco con opacidad del 70% */
+      backdrop-filter: blur(0px); /* Efecto de desenfoque para mejorar la transparencia */
+    }
+    .btn {
+      margin-right: 10px; /* Espaciado entre los botones */
+    }
+    .btn-primary{
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-4">
+  <a th:href="@{/registro2}" class="btn btn-primary">NUEVO</a>
+  <table class="table" border="3">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>FECHA</th>
+      <th>NOMBRE DE EL LOTE</th>
+      <th>TIPO DE EMPAQUE</th>
+      <th>CANTIDAD</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tabla:${tabla}">
+      <td th:text="${tabla.id}"></td>
+      <td th:text="${tabla.dia}"></td>
+      <td th:text="${tabla.lote}"></td>
+      <td th:text="${tabla.empaque}"></td>
+      <td th:text="${tabla.cantidad}"></td>
+      <td>
+        <div class="btn-group">
+          <a th:href="@{'/editar/' + ${tabla.id}}" class="btn btn-warning">Editar</a>
+          <a th:href="@{'/eliminar/' + ${tabla.id}}" class="btn btn-danger">Eliminar️</a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
